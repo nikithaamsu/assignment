@@ -1,0 +1,105 @@
+Imports System
+Imports System.Security.Cryptography
+Module Myemployee
+    Class employee
+        Public name As String
+        Public id As Integer
+        Public salary As Double
+        Public Sub New(ByVal nam As String)
+            Console.WriteLine("Object for employee {0} is being created", nam)
+        End Sub
+        Protected Overrides Sub Finalize()
+            Console.WriteLine("Object is being deleted")
+        End Sub
+        Public Sub setDetails(ByVal nam As String, ByVal empId As Integer, ByVal sal As Double)
+            name = nam
+            id = empId
+            salary = sal
+            Console.WriteLine("Name is {0},Id is {1},Salary is {2}", name, id, salary)
+        End Sub
+
+
+
+
+
+
+        Shared Sub Main()
+            Dim op As Integer, nm As String, eId As Integer, empSal As Double, j As Integer
+            Do
+
+                Console.WriteLine("1.Add new employee")
+                Console.WriteLine("2.Update employee")
+                Console.WriteLine("3.Delete employee")
+
+                op = Console.ReadLine()
+
+
+
+
+                If (op = 1) Then
+                    Console.WriteLine("Enter Name,Id and Salary of Employee1")
+                    nm = Console.ReadLine()
+                    eId = Console.ReadLine()
+                    empSal = Console.ReadLine()
+                    Dim obj1 As employee = New employee(nm)
+                    obj1.setDetails(nm, eId, empSal)
+                    Console.WriteLine("Enter Name,Id and Salary of Employee2")
+                    nm = Console.ReadLine()
+                    eId = Console.ReadLine()
+                    empSal = Console.ReadLine()
+                    Dim obj2 As employee = New employee(nm)
+                    obj2.setDetails(nm, eId, empSal)
+                    nm = Console.ReadLine()
+                    eId = Console.ReadLine()
+                    empSal = Console.ReadLine()
+                    Dim obj3 As employee = New employee(nm)
+                    obj3.setDetails(nm, eId, empSal)
+                ElseIf (op = 2) Then
+                    Console.WriteLine("Enter Name,Id and Salary of Employee1")
+                    nm = Console.ReadLine()
+                    eId = Console.ReadLine()
+                    empSal = Console.ReadLine()
+                    Dim obj1 As employee = New employee(nm)
+                    obj1.setDetails(nm, eId, empSal)
+                    Console.WriteLine("Enter Name,Id and Salary of Employee2")
+                    nm = Console.ReadLine()
+                    eId = Console.ReadLine()
+                    empSal = Console.ReadLine()
+                    Dim obj2 As employee = New employee(nm)
+                    obj2.setDetails(nm, eId, empSal)
+                    nm = Console.ReadLine()
+                    eId = Console.ReadLine()
+                    empSal = Console.ReadLine()
+                    Dim obj3 As employee = New employee(nm)
+                    obj3.setDetails(nm, eId, empSal)
+                    Console.WriteLine("Enter id of the employee to be updated:")
+                    Dim IdUp As Integer
+                    IdUp = Console.ReadLine()
+                    If (obj1.id = IdUp) Then
+                        obj1.id = obj1.id + 1
+                        Console.WriteLine("Name is {0},Id is {1},Salary is {2}", obj1.name, obj1.id, obj1.salary)
+
+                    ElseIf (obj2.id = IdUp) Then
+                        obj2.id = obj2.id + 1
+                        Console.WriteLine("Name is {0},Id is {1},Salary is {2}", obj2.name, obj2.id, obj3.salary)
+                    Else
+                        obj3.id = obj3.id + 1
+                        Console.WriteLine("Name is {0},Id is {1},Salary is {2}", obj3.name, obj3.id, obj3.salary)
+                    End If
+                Else
+
+                End If
+                Console.WriteLine("Do u want to continue if yes press 1 otherwise 0")
+                j = Console.ReadLine()
+
+            Loop While j = 1
+
+
+
+
+
+        End Sub
+    End Class
+
+
+End Module
